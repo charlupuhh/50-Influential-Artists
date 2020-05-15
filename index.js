@@ -325,7 +325,8 @@ The function should console.log 50 chunks of HTML code that match the structure 
 /* STRETCH 3: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
 function randomize(data){
-  let rand = data.pop();
+  let rand = [data.shift()];
+  console.log(data[0]);
   console.log(rand);
   for (i in data){
     rand.splice((Math.floor(Math.random()*rand.length), 0, data[i]));
@@ -333,6 +334,6 @@ function randomize(data){
   return rand;
 }
 
-randomize(artists);
+console.log(randomize(artists));
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
