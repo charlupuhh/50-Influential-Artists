@@ -207,11 +207,16 @@ const artists = [
 
 (1) Name of the first artist in the array
 (2) Bio of the third artist in the array */
-
+function task1(data){
+  console.log(data[0].name);
+  console.log(data[2].bio);
+}
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
+function task2(data){
+  data[8].name = "Vincent Van Gogh"
+}
 
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
@@ -222,9 +227,9 @@ const artists = [
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(id, name) {
-    /* code here */
-  }
+function getArtistByIndex(data, index) {
+    return (`The artist at index ${index} is ${data[index].name}.`);
+}
   
   /**
 
@@ -237,20 +242,23 @@ function getArtistByIndex(id, name) {
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
 */
-function removeArtist(/*code here*/) {
-    /* code here */
-  }
-  
+function removeArtist(data, index) {
+    data.splice(index, 1);
+}
   /**
 
 
 /* Task 5: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
-
-    /* Code here */
-
-  }
+function lotsOfArt(data){
+  let lots = []
+    for (i in data){
+      if (data[i].paintings > 100){
+        lots.push(data[i]);
+      }
+    }
+  return lots;
+}
 
 
 /* Task 6: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
@@ -262,25 +270,24 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
-  }
-
-
-
-
+function addArtist(data, id, name, years, genre, nationality, bio){
+    data.push({"id": id, "name": name, "years": years, "genre": genre, "nationality": nationality, "bio": bio});
+}
 
 // 🎨🎨 STRETCH 🎨🎨//
 
 /* STRETCH 1: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
 
-function get20s(/* Code here */){
-
-    /* Code here */
-
+function get20s(data){
+  let twenties = [];
+  for (i in data){
+    if (data[i].years[1] == '8'){
+      twenties.push(data[i].name);
+    }
   }
+  return twenties;
+  }
+
 
 /* STRETCH 2: Programtically console.log HTML element structure 
 
@@ -302,20 +309,30 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */){
-
-    /* Code here */
-
-  }
+// function getHTML(data){
+// console.log(`<div id="artist">`);
+// console.log(`<div class="image">`);
+//     <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>
+//     </div>
+//   <div class = "name">
+//     <a href="https://en.wikipedia.org/wiki/Vincent_van_Gogh"> Vincent Van Gogh</a>
+//   </div>
+//   <div class = "bio">Vincent Willem van Gogh (Dutch: [ˈvɪnsɛnt ˈʋɪləm vɑŋ ˈɣɔx] (listen); 30 March 1853 – 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. However, he was not commercially successful, and his suicide at 37 followed years of mental illness and poverty.</div>
+//   </div>
+// }
 
 
 /* STRETCH 3: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
-
-    /* Code here */
-
+function randomize(data){
+  let rand = data.pop();
+  console.log(rand);
+  for (i in data){
+    rand.splice((Math.floor(Math.random()*rand.length), 0, data[i]));
   }
+  return rand;
+}
 
+randomize(artists);
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
