@@ -1,0 +1,77 @@
+body{
+    font-family: "Raleway", sans-serif;
+    .title-container{
+        text-align: center;
+        display: flex;
+        padding: 10% 0;
+        width: 80%;
+        background-image: url(../assets/home.png); //@title-image: ~"assets/home.png";
+        background-position: center;
+        background-size: 1728px 1107px;
+        max-width: auto;
+        margin: 5% 10%;
+        position: relative;
+        
+        
+        @media@mobile{
+            background-size: 500px 320px;
+        }
+        
+        h1{
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+
+            @media@mobile{
+                font-size: 2rem;   
+            }
+        }
+
+        button{
+            .buttoning();
+        }
+
+        hr{
+            display: none;
+        }
+    }
+
+    .artists-container{
+        border-top: solid darkgrey 2px;
+        padding-top: 5%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        @media@mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .artist{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            width: 45%;
+            @media@mobile{
+                width: 60%;
+                padding-top: 10%;   
+            }
+
+            
+
+            img{
+                width: 80%;
+                border-radius: 5px;
+                height: 45%;
+            }
+
+            a {
+                .pretty-a();
+                font-size: 1.3rem;
+                margin: 5% 0%;
+            }
+        }
+    }
+}

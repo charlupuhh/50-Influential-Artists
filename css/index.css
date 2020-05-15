@@ -1,4 +1,194 @@
-/* Font in design files is Raleway */
-
-/* background-image in Design 👇
- url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/John_Martin_-_The_Plains_of_Heaven_-_Google_Art_Project.jpg/1920px-John_Martin_-_The_Plains_of_Heaven_-_Google_Art_Project.jpg'); */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+header {
+  text-align: center;
+  padding: 5%;
+}
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+  padding: 1%;
+}
+@media (max-width: 500px) {
+  header a {
+    font-size: 1rem;
+  }
+}
+header a:nth-child(1) {
+  font-weight: bold;
+}
+header a:nth-child(2) {
+  border-right: solid black 2px;
+  border-left: solid black 2px;
+}
+body {
+  font-family: "Raleway", sans-serif;
+}
+body .title-container {
+  text-align: center;
+  padding: 10% 0;
+  width: 80%;
+  background-image: url(../assets/home.png);
+  background-position: center;
+  background-size: 1728px 1107px;
+  max-width: auto;
+  margin: 5% 10%;
+  position: relative;
+}
+@media (max-width: 500px) {
+  body .title-container {
+    background-size: 500px 320px;
+  }
+}
+body .title-container h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+@media (max-width: 500px) {
+  body .title-container h1 {
+    font-size: 2rem;
+  }
+}
+body .title-container button {
+  background: white;
+  border-radius: 5px;
+  width: 20%;
+  color: #5e5b5b;
+  text-align: center;
+  padding: 3px;
+  font-size: 1.1rem;
+}
+@media (max-width: 500px) {
+  body .title-container button {
+    width: 40%;
+  }
+}
+body .title-container hr {
+  display: none;
+}
+body .artists-container {
+  border-top: solid darkgrey 2px;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+@media (max-width: 500px) {
+  body .artists-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+body .artists-container .artist {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 45%;
+}
+@media (max-width: 500px) {
+  body .artists-container .artist {
+    width: 60%;
+    padding-top: 10%;
+  }
+}
+body .artists-container .artist img {
+  width: 80%;
+  border-radius: 5px;
+  height: 45%;
+}
+body .artists-container .artist a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  margin: 5% 0%;
+}
